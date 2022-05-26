@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="Templates/Layout.xhtml">
+
+    <div id="cabecalho">
+        <ui:define name="header">
+            <ui:include src="Templates/Menu.xhtml"></ui:include>
+        </ui:define>
+    </div>
+    <div id="conteudo">
+        <ui:define name="content">
+            <h1 style="position: absolute; top: 40%; left: 33%"> Bem Vindo ao Sistema Easy Sale!</h1>
+            <div id="relogio">
+            <p:clock></p:clock>
+            </div>
+        </ui:define>
+    </div>
+
+
+</ui:decorate>

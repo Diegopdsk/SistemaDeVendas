@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui"
+       template="Templates/Layout.xhtml">
+    
+    <div id="conteudo">
+        <ui:define name="content">
+
+            <p:growl id="msg"/>
+
+            <h:form id="cadastro">
+
+                <div id="CadastroUser">
+
+                    <p:fieldset legend="Cadastro de Usuarios"  style="position: absolute; top: 15%; width: 80%; height: 60%; margin: 10%;">
+
+                        <h:form id="Cadastrar">
+                            <!--Posso usar aqui o colmuns="2" para deixar dois componentes numa linha-->
+                            <h:panelGrid columns="9"> 
+                                
+                                <h:outputLabel value="Mátricula"></h:outputLabel>
+                                <h:inputText size="8" value=""></h:inputText>
+                                <h:outputLabel value="Usuario"></h:outputLabel>
+                                <h:inputText size="20" value=""></h:inputText>
+                                <h:outputLabel  value="Senha"></h:outputLabel>
+                                <h:inputSecret size="10" maxlength="8" value=""></h:inputSecret>
+                                <h:outputLabel value="Categoria"></h:outputLabel>
+                                <h:selectOneMenu>
+                                    <f:selectItem itemLabel="administrador" itemEscaped="" itemValue=""></f:selectItem>
+                                    <f:selectItem itemLabel="operador" itemEscaped="" itemValue=""></f:selectItem>
+                                </h:selectOneMenu>
+                                
+                                <h:commandButton style="position: relative; left: 50%; width: 150%;" value="Salvar" ></h:commandButton>
+
+                            </h:panelGrid>
+
+                        </h:form>
+
+                        <h:form id="Pesquisar">
+                            
+                            <h:panelGrid style="position: absolute ;top: 35%;" columns="2">
+                            
+                                <p:inputText style="width: 80%;" size="20" value=""></p:inputText>
+                       <h:commandButton style="position: relative; width: 200%;" value="Pesquisar" ></h:commandButton> 
+                            </h:panelGrid>
+                            
+                            <p:dataTable style="position: absolute;top: 50% ;width: 97%;" var="" value="">
+                                <p:column headerText="Matricula">
+                                    <h:outputText value="" />
+                                </p:column>
+
+                                <p:column headerText="Usuário">
+                                    <h:outputText value="" />
+                                </p:column>
+
+                                <p:column headerText="Senha">
+                                    <h:outputText value="" />
+                                </p:column>
+
+                                <p:column headerText="Permissão">
+                                    <h:outputText value="" />
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>
+                    </p:fieldset>
+
+                </div>
+            </h:form>
+
+
+        </ui:define>
+    </div>
+    
+</ui:decorate>
+  

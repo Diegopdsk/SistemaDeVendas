@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="Templates/Layout.xhtml">
+
+    <ui:define name="content">
+
+        <p:fieldset legend="Cliente"  style="width: 70%; margin: 0% auto;">
+            <h:form>
+                <p:outputLabel for="inpUsuario" value="Cliente" style="width:10px; padding: 12px 5px;"/>
+                <p:inputText id="inpUsuario" style="width:150px; "/>
+                <p:outputLabel for="inpCpfCnpj" value="Cpf / Cnpj" style="width:10px; padding: 12px 5px;"/>
+                <p:inputText id="inpCpfCnpj" style="width:150px;"/>
+                <p:commandButton type="Sumit" value="Pesquisar" style="background-color: background; left: 11px"/>
+            </h:form>
+        </p:fieldset>
+
+        <p:fieldset legend="Itens"  style="width: 70%; margin: 0% auto;">
+            <h:form>
+                <p:commandButton type="Sumit" value="Adicionar Produto" style="background-color: background;"/>
+                <p:inputText id="inpProdutos" style="width:150px; margin-left: 15px; "/>
+                <p:outputLabel for="inpqtdItens" value="Quantidade" style="width:10px; padding: 12px 5px;"/>
+                <p:inputText id="inpqtdItens" style="width:50px;"/>
+            </h:form> 
+            <br/>
+            <p:dataTable>
+                <p:column headerText="Código">
+
+                </p:column>
+                <p:column headerText="Descrição">
+
+                </p:column>
+                <p:column headerText="Quant">
+
+                </p:column>
+                <p:column headerText="UN">
+
+                </p:column>
+                <p:column headerText="Valor Unit">
+
+                </p:column>
+                <p:column headerText="Valor Total R$">
+
+                </p:column>
+            </p:dataTable>
+
+            <h:panelGrid columns="8">
+                <p:outputLabel for="inpNumupom" value="N° de Cupom" style="width:10px; padding: 12px 5px;"/>
+                <p:inputText id="inpNumupom" style="width:50px; "/>
+                <p:outputLabel for="inpVendedor" value="Vendedor" style="width:10px; padding: 12px 5px;"/>
+                <p:inputText id="inpVendedor" style="width:100px;"/>
+
+                <p:outputLabel for="inpPagamento" value="Pagamento" style="margin-left: 11px;" />
+
+                <p:selectOneMenu id="inpPagamento" value="#" style="width:100px; margin-left:20px;">
+                    <f:selectItem itemLabel="Dinheiro" itemValue="Dinheiro" />
+                    <f:selectItem itemLabel="Credito" itemValue="Credito" />
+                    <f:selectItem itemLabel="Debito" itemValue="Debito" />
+
+                </p:selectOneMenu>
+
+                <p:outputLabel for="inpSubTotal" value="subTotal" style="margin-left: 11px;" />           
+                <p:inputText id="inpSubTotal" style="width:100px;margin-left: 11px;"/>
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="6">
+
+                <p:commandButton type="" value="Finalizar Venda" style="background-color: background; width: 110%"/>
+                <p:commandButton type="" value="Excluir" style="background-color: #FF0000; left: 20%;"/>
+                <p:commandButton type="" value="Desconto" style="background-color: #B0E0E6; left: 18%;"/>
+
+                <p:inputText id="inpPorCento" placeholder="%" style="width:30%; margin-left: 15%;"/>
+                <p:outputLabel for="inpTotDesct" value="TotDesct" style="margin-left: 5%;" />
+                <p:inputText id="inpTotDesct" style="width:50%; margin-left: 5%;"/>
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="2">
+
+                <p:outputLabel for="inpTotal" value="Total" style="margin-left: 955%; font-size: 30px;"/>
+                <p:inputText id="inpTotal" style="width:45%; margin-left: 273%; "/>
+
+            </h:panelGrid>
+
+        </p:fieldset>
+
+    </ui:define>
+
+</ui:decorate>
+

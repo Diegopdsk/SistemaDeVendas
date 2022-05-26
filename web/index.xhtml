@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="Templates/Layout_1.xhtml">
+
+    <div id="cabecalho">
+        <ui:define name="header">
+
+        </ui:define>
+    </div>
+    <div id="conteudo">
+        <ui:define name="content">
+
+            <p:growl id="msg"/>
+
+
+
+            <h:form id="entrar">
+
+                <div id="TelaLogin">
+
+                    <p:fieldset legend="Login"  style="width: 80%; margin: 0px auto;">
+
+
+                        <!--Posso usar aqui o colmuns="2" para deixar dois componentes numa linha-->
+                        <h:panelGrid columns="2"> 
+
+                            <h:outputLabel for="usuario" value="Usuario"></h:outputLabel>
+                            <h:inputText id="usuario" size="20" value="#{logarBean.usuario.nome}"></h:inputText>
+                            <h:outputLabel for="senha"  value="Senha"></h:outputLabel>
+                            <h:inputSecret id="senha" size="20" maxlength="8" value="#{logarBean.usuario.senha}"></h:inputSecret>
+                            
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="1">
+
+                            <h:commandButton style="position: relative; left: 126%" value="Entrar" action="#{logarBean.Entrar}"></h:commandButton>
+
+                        </h:panelGrid>
+                    </p:fieldset>
+
+                </div>
+            </h:form>
+
+
+        </ui:define>
+    </div>
+
+
+</ui:decorate>

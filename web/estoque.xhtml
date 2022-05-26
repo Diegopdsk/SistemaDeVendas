@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="Templates/Layout.xhtml">
+    <div id="conteudo">
+        <ui:define name="content">
+
+            <p:growl id="msg"/>
+
+            <h:form id="estoque">
+
+                <div id="CadastroProduto">
+
+                    <p:fieldset legend="Cadastro de Produtos"  style="position: absolute; top: 15%; width: 80%; height: 60%; margin: 10%;">
+
+                        <h:form id="CadastrarProdutos">
+                            <!--Posso usar aqui o colmuns="2" para deixar dois componentes numa linha-->
+                            <h:panelGrid columns="6"> 
+
+                                <h:outputLabel value="Descrição"></h:outputLabel>
+                                <h:inputText size="28" value=""></h:inputText>
+                                <h:outputLabel value="Unidade"></h:outputLabel>
+                                <h:inputText size="10" value=""></h:inputText>
+                                <h:outputLabel  value="Quantidade"></h:outputLabel>
+                                <h:inputText size="10" value=""></h:inputText>
+
+                            </h:panelGrid>
+
+                            <h:panelGrid columns="4">
+
+                                <h:outputLabel  value="Valor de Compra"></h:outputLabel>
+                                <h:inputText size="10" value=""></h:inputText>
+                                <h:outputLabel  value="Valor de Revenda"></h:outputLabel>
+                                <h:inputText size="10" value=""></h:inputText>
+
+                            </h:panelGrid>
+
+                            <h:panelGrid columns="2">
+
+                                <h:commandButton style="margin-left: 1150%; width: 150%;" value="Limpar" ></h:commandButton>
+                                <h:commandButton style="margin-left: 1280%; width: 150%;" value="Salvar" ></h:commandButton>
+
+                            </h:panelGrid>
+
+                        </h:form>
+
+                        <h:form id="Pesquisar">
+
+                            <h:panelGrid style="position: absolute ;top: 38%;" columns="2">
+
+                                <p:inputText style="width: 80%;" size="20" value="#{estoqueBean.produto.descricao}"></p:inputText>
+                                <h:commandButton style="position: relative; width: 200%;" value="Pesquisar" action="#{estoqueBean.buscar()}" ></h:commandButton> 
+                            </h:panelGrid>
+
+                            <p:dataTable id="TableEstoque" style="position: absolute;top: 50% ;width: 97%;" var="item" value="#{estoqueBean.produtos}">
+                                <p:column headerText="Codigo">
+                                    <h:outputText value="#{item.codigo}" />
+                                </p:column>
+
+                                <p:column headerText="Descrição">
+                                    <h:outputText value="#{item.descricao}" />
+                                </p:column>
+
+                                <p:column headerText="Quantidade">
+                                    <h:outputText value="#{item.qtd}" />
+                                </p:column>
+
+                                <p:column headerText="Unidade">
+                                    <h:outputText value="#{item.un}" />
+                                </p:column>
+                                
+                                <p:column headerText="Fabricante">
+                                    <h:outputText value="#{item.fabricante}" />
+                                </p:column>
+                                
+                                <p:column headerText="Valor de Custo">
+                                    <h:outputText value="#{item.valorCusto}" />
+                                </p:column>
+                                
+                                <p:column headerText="Valor de Revenda">
+                                    <h:outputText value="#{item.valorRevenda}" />
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>
+                    </p:fieldset>
+
+                </div>
+            </h:form>
+
+
+        </ui:define>
+    </div>
+
+</ui:decorate>
+

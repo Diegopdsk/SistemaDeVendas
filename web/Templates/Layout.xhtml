@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>EasySale</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" ></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" href="../Css/modulo.css"></link>
+        <link rel="stylesheet" href="../Css/primeicons.css"></link>
+        <link rel="icon" type="image/png" href="../Img/logoPI4.png"></link>
+    </h:head>
+    <h:body>
+        
+        <img id="Logo" src="../Img/logoPI4.png"/>
+        <div id="pagina">
+            
+            <div id="cabecalho">
+                <ui:insert name="header">
+                    <ui:include src="Menu.xhtml"></ui:include>
+                </ui:insert>
+            </div>
+            
+            <div id="conteudo">
+                <ui:insert name="content">
+                    <h1>Nesta Pagina o conteudo que aparece aqui é do Layout</h1>
+                </ui:insert>
+            </div>
+            
+            <div id="rodape">
+                <ui:insert name="footer">
+                    <ui:include src="Rodape.xhtml">
+                        
+                    </ui:include>
+                </ui:insert>
+            </div>
+        
+        </div>
+    </h:body>
+</html>

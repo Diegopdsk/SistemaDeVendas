@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:menubar styleClass="menubar">
+
+        <p:menuitem styleClass="menuitem" value="Vendas" url="../faces/vendas.xhtml"></p:menuitem>
+        <p:menuitem styleClass="menuitem" value="Cadastros" url="../faces/cadastros.xhtml"></p:menuitem>
+        <p:menuitem styleClass="menuitem" value="Estoque" url="../faces/estoque.xhtml"></p:menuitem>
+        <p:submenu styleClass="submenu" label="Relatorios" >
+            <p:menuitem styleClass="menuitem" value="Faturamento" url="../faces/relatorios.xhtml" />
+            <p:menuitem styleClass="menuitem" value="Estoque" url="../faces/relatorios.xhtml" />
+        </p:submenu>
+        <p:menuitem styleClass="menuitem" value="Sair" url="../faces/index.xhtml"></p:menuitem>
+
+    </p:menubar>
+
+</ui:composition>
